@@ -28,10 +28,12 @@ def main():
             json_log = {'test_name': test_name, 'error_msg': error_msg, 'traceback': traceback.format_exc()}
             output_log.write(json.dumps(json_log))
 
+    print('successes: {}, failures, {}'.format(nb_passed_tests, nb_failures))
+
     if nb_failures > 0:
         sys.exit(1)
 
-    print('successes: {}, failures, {}'.format(nb_passed_tests, nb_failures))
+
 
 def test_not_null(params):
     database = params['DB']
