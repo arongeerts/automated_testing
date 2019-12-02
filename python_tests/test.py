@@ -15,6 +15,7 @@ def main():
 
     for test_name in test_file.keys():
         test_config = test_file[test_name]
+        print(test_config)
         error_msg = test_config['error_message']
         f = test_config['test']
         params = test_config['params']
