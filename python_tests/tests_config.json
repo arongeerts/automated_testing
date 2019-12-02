@@ -1,0 +1,13 @@
+{
+  "tests": {
+    "not_null_game_id": {
+      "test": "test_not_null",
+      "error_message": "Found a NULL value for the game ID in the games table",
+      "params": {
+        "DB": "game_db",
+        "TABLE": "games_table",
+        "FIELD": "game_id"
+      }
+    }
+  }
+}
