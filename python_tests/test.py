@@ -42,3 +42,7 @@ def not_null(params):
     cursor.execute(stmt)
     result = cursor.fetchone()
     assert result[0] == 0
+
+
+if __name__ == '__main__':
+    main()
