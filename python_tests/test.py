@@ -31,6 +31,7 @@ def main():
     if nb_failures > 0:
         sys.exit(1)
 
+    print('successes: {}, failures, {}'.format(nb_passed_tests, nb_failures))
 
 def not_null(params):
     database = params['DB']
