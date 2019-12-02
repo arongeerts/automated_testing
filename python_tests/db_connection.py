@@ -4,6 +4,6 @@ import mysql.connector
 def get_conn():
     mydb = mysql.connector.connect(
       host="localhost",
-      user="admin",
+      user="mysql",
       passwd="admin"
     )

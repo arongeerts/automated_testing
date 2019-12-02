@@ -3,7 +3,7 @@ import sys
 import traceback
 from db_connection import get_conn
 
-test_file = json.load(open('./test_config.json'))
+test_file = json.load(open('./tests_config.json'))
 output_log = open('test_output.txt', 'w')
 
 db_connection = get_conn()
