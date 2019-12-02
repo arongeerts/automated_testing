@@ -3,7 +3,7 @@ import mysql.connector
 # change hardcoded passwords
 def get_conn():
     mydb = mysql.connector.connect(
-      host="localhost",
+      host="db",
       user="mysql",
       passwd="admin"
     )
