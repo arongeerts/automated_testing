@@ -33,7 +33,7 @@ def main():
 
     print('successes: {}, failures, {}'.format(nb_passed_tests, nb_failures))
 
-def not_null(params):
+def test_not_null(params):
     database = params['DB']
     table = params['TABLE']
     field = params['FIELD']
