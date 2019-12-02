@@ -5,6 +5,7 @@ pipeline {
             steps {
                 dir('/var/jenkins_home/workspace'){
                     sh """
+                    rm -rf automated_testing || true
                     git clone https://github.com/arongeerts/automated_testing.git
                     """
                 }
@@ -13,17 +14,19 @@ pipeline {
         stage('Test') {
             steps {
                 dir('/var/jenkins_home/workspace/automated_testing/python_tests') {
-                    sh """
-                    ls
-                    pip install -r requirements.txt
-                    python ./test.py
-                    """
+                    catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                        sh """
+                        ls
+                        pip install -r requirements.txt
+                        python ./test.py
+                        """
+                    }
                 }
             }
         }
         stage('Push logs') {
             steps {
-                dir('/var/jenkins_home/workspace/automated_testing/python_code'){
+                dir('/var/jenkins_home/workspace/automated_testing/python_tests'){
                     sh 'python push_test_logs.py'
                 }
             }
