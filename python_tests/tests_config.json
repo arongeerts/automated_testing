@@ -2,7 +2,7 @@
   "tests": {
     "not_null_game_id": {
       "test": "test_not_null",
-      "error_message": "Found a NULL value for the game ID in the games table",
+      "error_message": "Found a NULL value for the GAME_ID in the games table",
       "params": {
         "DB": "games_db",
         "TABLE": "games_table",
@@ -11,11 +11,21 @@
     },
     "not_null_game_start": {
       "test": "test_not_null",
-      "error_message": "Found a NULL value for the game start in the games table",
+      "error_message": "Found a NULL value for the GAME_START timestamp in the games table",
       "params": {
         "DB": "games_db",
         "TABLE": "games_table",
         "FIELD": "game_start"
+      }
+    },
+    "game_start_end_order": {
+      "test": "test_timestamp_order",
+      "error_message": "Found a record where the GAME_START came after the GAME_END timestamp",
+      "params": {
+        "DB": "games_db",
+        "TABLE": "games_table",
+        "FIELD1": "game_start",
+        "FIELD2": "game_end"
       }
     }
   }
