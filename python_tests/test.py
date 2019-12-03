@@ -24,7 +24,7 @@ def main():
             nb_passed_tests += 1
         except AssertionError as e:
             nb_failures += 1
-            json_log = {'test_name': test_name, 'error_msg': error_msg, 'traceback': traceback.format_exc(), 'error': e}
+            json_log = {'test_name': test_name, 'error_msg': error_msg, 'traceback': traceback.format_exc(), 'error': str(e)}
             output_log.write(json.dumps(json_log))
 
     print('successes: {}, failures, {}'.format(nb_passed_tests, nb_failures))
