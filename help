@@ -1,3 +1,11 @@
+# Setup the stack
+docker-compose up
+
+# create the connection (from a different terminal)
 mysql -h 127.0.0.1 -u root --protocol=tcp -p
 
 password = admin
+
+
+# INSERT FAULTY DATA
+INSERT INTO games_table VALUES (NULL, '2019-01-01 01:00:00', '2019-01-02 01:00:00', 'PLAYER1', 50)
