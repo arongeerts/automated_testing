@@ -12,8 +12,6 @@ def test_not_null(params):
     field = params['FIELD']
     stmt = 'SELECT COUNT(*) FROM {}.{} WHERE {} IS NULL'.format(database, table, field)
     cursor = db_connection.cursor()
-    cursor.execute('show databases')
-    print(cursor.fetchall())
     cursor.execute(stmt)
     result = cursor.fetchone()
     assert result[0] == 0
