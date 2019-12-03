@@ -27,6 +27,17 @@
         "FIELD1": "game_start",
         "FIELD2": "game_end"
       }
+    },
+    ,
+    "valid_score_range": {
+      "test": "test_field_in_range",
+      "error_message": "Found a record where the SCORE was in an invalid range",
+      "params": {
+        "DB": "games_db",
+        "TABLE": "games_table",
+        "FIELD": "SCORE",
+        "LOW": "0"
+      }
     }
   }
 }
