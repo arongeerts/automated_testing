@@ -10,7 +10,7 @@ def test_not_null(params):
     database = params['DB']
     table = params['TABLE']
     field = params['FIELD']
-    stmt = 'SELECT COUNT(*) FROM {}.{} WHERE {} IS NOT NULL'.format(database, table, field)
+    stmt = 'SELECT COUNT(*) FROM {}.{} WHERE {} IS NULL'.format(database, table, field)
     cursor = db_connection.cursor()
     cursor.execute('show databases')
     print(cursor.fetchall())
