@@ -2,6 +2,7 @@ import json
 import sys
 import traceback
 from db_connection import get_conn
+from test_library import execute_function
 
 test_file = json.load(open('./tests_config.json'))['tests']
 output_log = open('test_output.txt', 'w')
@@ -18,10 +19,10 @@ def main():
         error_msg = test_config['error_message']
         f = test_config['test']
         params = test_config['params']
-        test_function = globals()[f]
 
         try:
-            test_function(params)
+            print('Running {}...'.format(test_name))
+            execute_function(f, params)
             nb_passed_tests += 1
         except AssertionError as e:
             nb_failures += 1
@@ -32,20 +33,6 @@ def main():
 
     if nb_failures > 0:
         sys.exit(1)
-
-
-
-def test_not_null(params):
-    database = params['DB']
-    table = params['TABLE']
-    field = params['FIELD']
-    stmt = 'SELECT COUNT(*) FROM {}.{} WHERE {} IS NOT NULL'.format(database, table, field)
-    cursor = db_connection.cursor()
-    cursor.execute('show databases')
-    print(cursor.fetchall())
-    cursor.execute(stmt)
-    result = cursor.fetchone()
-    assert result[0] == 0
 
 
 if __name__ == '__main__':
