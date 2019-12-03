@@ -35,7 +35,8 @@
         "DB": "games_db",
         "TABLE": "games_table",
         "FIELD": "SCORE",
-        "LOW": "0"
+        "LOW": "0",
+        "HIGH": "100"
       }
     }
   }
