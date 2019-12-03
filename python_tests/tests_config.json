@@ -8,6 +8,15 @@
         "TABLE": "games_table",
         "FIELD": "game_id"
       }
+    },
+    "not_null_game_start": {
+      "test": "test_not_null",
+      "error_message": "Found a NULL value for the game start in the games table",
+      "params": {
+        "DB": "games_db",
+        "TABLE": "games_table",
+        "FIELD": "game_start"
+      }
     }
   }
 }
