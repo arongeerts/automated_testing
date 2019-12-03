@@ -1,5 +1,6 @@
-from python_tests.test import db_connection
+from db_connection import get_conn
 
+db_connection = get_conn()
 
 def execute_function(function_name, params):
     return globals()[function_name](params)

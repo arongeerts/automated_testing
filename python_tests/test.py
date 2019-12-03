@@ -1,13 +1,11 @@
 import json
 import sys
 import traceback
-from db_connection import get_conn
 from test_library import execute_function
 
 test_file = json.load(open('./tests_config.json'))['tests']
 output_log = open('test_output.txt', 'w')
 
-db_connection = get_conn()
 
 
 def main():
