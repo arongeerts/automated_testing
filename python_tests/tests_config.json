@@ -28,7 +28,6 @@
         "FIELD2": "game_end"
       }
     },
-    ,
     "valid_score_range": {
       "test": "test_field_in_range",
       "error_message": "Found a record where the SCORE was in an invalid range",
