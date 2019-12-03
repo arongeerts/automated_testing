@@ -18,7 +18,7 @@ pipeline {
                         sh """
                         ls
                         pip install -r requirements.txt
-                        python ./test.py
+                        python ./production_data_test.py
                         """
                     }
                 }
