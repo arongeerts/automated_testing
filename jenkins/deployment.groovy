@@ -6,7 +6,6 @@ pipeline {
                 dir('/var/jenkins_home/workspace'){
                     sh """
                     rm -rf automated_testing || true
-                    pip install boto3
                     git clone https://github.com/arongeerts/automated_testing.git
                     """
                 }
