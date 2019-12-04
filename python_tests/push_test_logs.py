@@ -10,4 +10,4 @@ try:
 except:
     pass
 
-s3.put_object(Bucket='mybucket', Key=folder_key, Body= f.close())
+s3.put_object(Bucket='mybucket', Key=folder_key, Body= f)
