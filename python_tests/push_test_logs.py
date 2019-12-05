@@ -16,9 +16,12 @@ try:
 except:
     print('bucket mybucket already exists')
 
+body = f.read().split('\n')
+print(body)
+
 html = '<html><body><table cellpadding="20"><th>test</th><th>status</th><th>message</th>'
 
-for line in f.read().split('\n'):
+for line in body:
     l = json.loads(line)
     html += '<tr><td>{}</td><td>{}</td><td>{}</td></tr>'.format(l['test_name'], l['result'], l.get('error_msg', ''))
 
