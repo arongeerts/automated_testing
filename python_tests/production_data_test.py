@@ -34,7 +34,7 @@ def main():
 
 def log(json_message):
     output_log.write(json.dumps(json_message))
-
+    output_log.write('\n')
 
 if __name__ == '__main__':
     main()
