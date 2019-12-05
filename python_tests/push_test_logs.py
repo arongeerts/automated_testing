@@ -1,5 +1,4 @@
 import json
-import traceback
 
 import boto3, datetime
 
@@ -14,10 +13,9 @@ try:
     s3.create_bucket(ACL='public-read-write',
                      Bucket='mybucket')
 except:
-    print('bucket mybucket already exists')
+    pass
 
 body = f.read().split('\n')
-print(body)
 
 html = '<html><body><table cellpadding="20"><th>test</th><th>status</th><th>message</th>'
 
