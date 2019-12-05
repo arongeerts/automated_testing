@@ -23,6 +23,8 @@ html = '<html><body><table cellpadding="20"><th>test</th><th>status</th><th>mess
 
 for line in body:
     l = json.loads(line)
+    if l == '':
+        continue
     html += '<tr><td>{}</td><td>{}</td><td>{}</td></tr>'.format(l['test_name'], l['result'], l.get('error_msg', ''))
 
 html += '</table></body></html>'
