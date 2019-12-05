@@ -22,9 +22,10 @@ print(body)
 html = '<html><body><table cellpadding="20"><th>test</th><th>status</th><th>message</th>'
 
 for line in body:
-    l = json.loads(line)
-    if l == '':
+    if line == '':
         continue
+
+    l = json.loads(line)
     html += '<tr><td>{}</td><td>{}</td><td>{}</td></tr>'.format(l['test_name'], l['result'], l.get('error_msg', ''))
 
 html += '</table></body></html>'
