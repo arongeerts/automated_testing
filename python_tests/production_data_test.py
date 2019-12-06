@@ -7,7 +7,6 @@ test_file = json.load(open('./tests_config.json'))['tests']
 output_log = open('test_output.txt', 'w')
 
 
-
 def main():
     nb_passed_tests = 0
     nb_failures = 0
@@ -22,7 +21,7 @@ def main():
             print('Running {}...'.format(test_name))
             execute_function(f, params)
             nb_passed_tests += 1
-            log({'test_name': test_name, 'result': 'SUCCESS', 'error_msg': error_msg, 'traceback': None, 'error': None})
+            log({'test_name': test_name, 'result': 'SUCCESS', 'error_msg': '', 'traceback': None, 'error': None})
         except AssertionError as e:
             nb_failures += 1
             log({'test_name': test_name, 'result': 'FAIL', 'error_msg': error_msg, 'traceback': traceback.format_exc(), 'error': str(e)})
